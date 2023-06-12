@@ -1,0 +1,52 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int balls,score,bowled;
+	float total_runs;
+	balls=sc.nextInt();
+	total_runs=sc.nextInt();
+	score=sc.nextInt();
+	bowled=sc.nextInt();
+	float overs=balls/6;
+	System.out.println(overs);
+	int overs_finished=bowled/6;
+    System.out.println("one "+overs_finished);
+    int res=bowled%6;
+   	System.out.println("two "+res);
+   	double res1=overs_finished+(0.1*res);
+   	System.out.println("overs finished "+res1);
+   	double rr=score/res1;
+   	System.out.println("current runrate "+rr);
+   	float t_rr=total_runs/overs;
+    System.out.println("total runrate " +t_rr);
+    if(t_rr>rr)
+    {
+      System.out.println("chance to lose");  
+    }
+    else if (t_rr==rr)
+    {
+    System.out.println("both team have chances to win");
+    }
+    else
+    {
+    System.out.println("eligible to win");
+    } 
+}
+}
+sample input:-
+300
+375
+78
+45
+sample output:-
+50.0
+one 7
+two 3
+overs finished 7.3
+current runrate 10.684931506849315
+total runrate 7.5
+eligible to win
+
+
